@@ -1,5 +1,5 @@
 const mockQuery = jest.fn().mockResolvedValue({})
-import { getUsers, getUsersByLocation } from "../db/user.controller";
+import { getUsers, getUsersByLanguage, getUsersByLocation } from "../db/user.controller";
 import { getDbConnection } from '../db/connector';
 
 jest.mock('../db/connector', () => ({
@@ -28,6 +28,19 @@ describe('List Tests', () => {
       );
       expect(mockQuery.mock.calls[0][1]).toContain(
         "testLocation"
+      );
+    });
+  
+  it('list_languages should attempt a read on the database with languages', 
+    async () => {
+      await getUsersByLanguage("testLanguage1");
+      expect(getDbConnection).toHaveBeenCalled();
+      expect(mockQuery).toHaveBeenCalled();
+      expect(mockQuery.mock.calls[0][0]).toContain(
+        `language`
+      );
+      expect(mockQuery.mock.calls[0][1]).toContain(
+        "testLanguage1"
       );
     });
 });
