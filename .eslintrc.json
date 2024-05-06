@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "sourceType": "module"
+  },
+  "rules": {
+    "max-len": ["error", 80],
+    "no-tabs": "error",
+    "indent": ["error", 2]
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ]
+}
+  
