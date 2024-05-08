@@ -7,8 +7,8 @@
   "scripts": {
     "build": "tsc",
     "start": "ts-node src/index.ts",
-    "lint": "eslint -c .eslintrc.json **/*.ts",
-    "lint:fix": "eslint -c .eslintrc.json --fix **/*.ts",
+    "lint": "eslint -c .eslintrc.json \"**/*.ts\"",
+    "lint:fix": "eslint -c .eslintrc.json --fix \"**/*.ts\"",
     "test": "jest --verbose"
   },
   "author": "Miguel Oliveira",

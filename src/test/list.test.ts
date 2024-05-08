@@ -1,5 +1,9 @@
 const mockQuery = jest.fn().mockResolvedValue({})
-import { getUsers, getUsersByLanguage, getUsersByLocation } from "../db/user.controller";
+import { 
+  getUsers, 
+  getUsersByLanguage, 
+  getUsersByLocation
+} from "../db/user.controller";
 import { getDbConnection } from '../db/connector';
 
 jest.mock('../db/connector', () => ({
